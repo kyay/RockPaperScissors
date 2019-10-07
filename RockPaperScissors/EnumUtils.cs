@@ -23,17 +23,38 @@ namespace RockPaperScissors
             }
             catch (Exception)
             {
-                //Failsafe: just return the string representation of that enum value
+                //Fail-safe: just return the string representation of that enum value
                 return en.ToString();
             }
         }
 
-        public static bool CanBeat(this Choice ch, Choice otherChoice) {
+        public static bool CanBeat(this Choice ch, Choice otherChoice)
+        {
             //If the ch follows any one of the possible winning patterns against otherChoice, return true
-            if((ch == Choice.Rock && otherChoice == Choice.Scissors) || (ch == Choice.Paper && otherChoice == Choice.Rock) || (ch == Choice.Scissors && otherChoice == Choice.Paper))
+            if (ch == Choice.Rock)
             {
-                return true;
+                if (otherChoice == Choice.Scissors)
+                {
+                    return true;
+                }
             }
+
+            if (ch == Choice.Paper)
+            {
+                if (otherChoice == Choice.Rock)
+                {
+                    return true;
+                }
+            }
+
+            if (ch == Choice.Scissors)
+            {
+                if (otherChoice == Choice.Paper)
+                {
+                    return true;
+                }
+            }
+
             //If it doesn't follow any pattern, then return false (even if it's a draw)
             return false;
         }

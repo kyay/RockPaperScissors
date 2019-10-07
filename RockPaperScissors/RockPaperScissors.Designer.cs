@@ -41,7 +41,7 @@
             this.btnRock.Name = "btnRock";
             this.btnRock.Size = new System.Drawing.Size(154, 47);
             this.btnRock.TabIndex = 0;
-            this.btnRock.Tag = "1";
+            this.btnRock.Tag = "";
             this.btnRock.Text = "Rock";
             this.btnRock.UseVisualStyleBackColor = true;
             this.btnRock.Click += new System.EventHandler(this.btnChoice_Click);
@@ -52,7 +52,7 @@
             this.btnPaper.Name = "btnPaper";
             this.btnPaper.Size = new System.Drawing.Size(154, 47);
             this.btnPaper.TabIndex = 1;
-            this.btnPaper.Tag = "2";
+            this.btnPaper.Tag = "";
             this.btnPaper.Text = "Paper";
             this.btnPaper.UseVisualStyleBackColor = true;
             this.btnPaper.Click += new System.EventHandler(this.btnChoice_Click);
@@ -63,7 +63,7 @@
             this.btnScissors.Name = "btnScissors";
             this.btnScissors.Size = new System.Drawing.Size(154, 47);
             this.btnScissors.TabIndex = 2;
-            this.btnScissors.Tag = "3";
+            this.btnScissors.Tag = "";
             this.btnScissors.Text = "Scissors";
             this.btnScissors.UseVisualStyleBackColor = true;
             this.btnScissors.Click += new System.EventHandler(this.btnChoice_Click);
