@@ -22,6 +22,7 @@ namespace RockPaperScissors
 
 		private void btnChoice_Click(object sender, EventArgs e)
 		{
+            System.Media.SystemSounds.Exclamation.Play();
             //Get the user and computer choices and set them into their respective players
 			Winner winner = Winner.None;
 			playerUser.Choice = (Choice)Convert.ToInt32(((Button)sender).Tag);
@@ -50,7 +51,17 @@ namespace RockPaperScissors
 			playerComputer.Choice = Choice.None;
 		}
 
-		private void DisplayStats()
+        private void RockPaperScissors_Load(object sender, EventArgs e)
+        {
+            System.Media.SystemSounds.Asterisk.Play();
+        }
+
+        private void RockPaperScissors_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Media.SystemSounds.Hand.Play();
+        }
+
+        private void DisplayStats()
 		{
             //Display the stats using and overridden ToString() method
 			lblUserStats.Text = "User Stats: \n" + playerUser.ToString();

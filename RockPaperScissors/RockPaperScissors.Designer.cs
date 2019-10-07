@@ -101,6 +101,8 @@
             this.Name = "RockPaperScissors";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rock Paper Scissors";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RockPaperScissors_FormClosed);
+            this.Load += new System.EventHandler(this.RockPaperScissors_Load);
             this.ResumeLayout(false);
 
         }
