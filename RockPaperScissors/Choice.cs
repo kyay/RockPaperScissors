@@ -8,7 +8,7 @@ namespace RockPaperScissors
 {
     public enum Choice
     {
-        //There is no winner and it isn't a draw
+        //There is no current choice (i.e. just do nothing)
         None,
         Rock,
         Paper,

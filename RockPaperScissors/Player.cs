@@ -69,6 +69,7 @@ namespace RockPaperScissors
 
 		public void OnWinnerAnnounced(Winner wnrNewWinner)
 		{
+            //Increment the correct counter based on the winner
 			if (wnrNewWinner == Winner)
 				winCount++;
 			else if (wnrNewWinner == Winner.Draw)
@@ -83,8 +84,8 @@ namespace RockPaperScissors
 
 		public override string ToString()
 		{
-			return //"Player symbol: " + Winner.ToString() + "\n" +
-				"Win count: " + WinCount + "\n" +
+            //Return a string representation of the player object
+			return "Win count: " + WinCount + "\n" +
                 "Draw count: " + DrawCount + "\n" +
                 "Loss count: " + LossCount + "\n" +
 				"Current Choice: " + choice;

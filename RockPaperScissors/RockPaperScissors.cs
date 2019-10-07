@@ -22,10 +22,12 @@ namespace RockPaperScissors
 
 		private void btnChoice_Click(object sender, EventArgs e)
 		{
+            //Get the user and computer choices and set them into their respective players
 			Winner winner = Winner.None;
 			playerUser.Choice = (Choice)Convert.ToInt32(((Button)sender).Tag);
 			playerComputer.Choice = (Choice)rGen.Next(1, 4);
 
+            //Decide who the winner is
 			if (playerUser.Choice == playerComputer.Choice)
 				winner = Winner.Draw;
 			else if (playerUser.Choice.CanBeat(playerComputer.Choice))
@@ -33,6 +35,7 @@ namespace RockPaperScissors
 			else
 				winner = Winner.Computer;
 
+            //Increment counters and display winner and stats
 			playerUser.OnWinnerAnnounced(winner);
 			playerComputer.OnWinnerAnnounced(winner);
 			DisplayStats();
@@ -41,6 +44,7 @@ namespace RockPaperScissors
 
 		private void DisplayWinner(Winner winner)
 		{
+            //Display the winner, then reset for a new game
 			MessageBox.Show(winner.GetDescription(), "Winner");
 			playerUser.Choice = Choice.None;
 			playerComputer.Choice = Choice.None;
@@ -48,6 +52,7 @@ namespace RockPaperScissors
 
 		private void DisplayStats()
 		{
+            //Display the stats using and overridden ToString() method
 			lblUserStats.Text = "User Stats: \n" + playerUser.ToString();
 			lblComputerStats.Text = "Computer Stats: \n" + playerComputer.ToString();
 		}
