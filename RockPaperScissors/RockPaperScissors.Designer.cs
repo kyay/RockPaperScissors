@@ -70,7 +70,7 @@
             // 
             // lblUserStats
             // 
-            this.lblUserStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserStats.Location = new System.Drawing.Point(10, 9);
             this.lblUserStats.Name = "lblUserStats";
             this.lblUserStats.Size = new System.Drawing.Size(237, 288);
@@ -80,7 +80,7 @@
             // 
             // lblComputerStats
             // 
-            this.lblComputerStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComputerStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComputerStats.Location = new System.Drawing.Point(253, 9);
             this.lblComputerStats.Name = "lblComputerStats";
             this.lblComputerStats.Size = new System.Drawing.Size(232, 288);
@@ -99,6 +99,7 @@
             this.Controls.Add(this.btnPaper);
             this.Controls.Add(this.btnRock);
             this.Name = "RockPaperScissors";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rock Paper Scissors";
             this.ResumeLayout(false);
 

@@ -85,8 +85,8 @@ namespace RockPaperScissors
 		{
 			return //"Player symbol: " + Winner.ToString() + "\n" +
 				"Win count: " + WinCount + "\n" +
-				"Loss count: " + LossCount + "\n" +
-				"Draw count: " + DrawCount + "\n" +
+                "Draw count: " + DrawCount + "\n" +
+                "Loss count: " + LossCount + "\n" +
 				"Current Choice: " + choice;
 		}
 	}
