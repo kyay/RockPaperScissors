@@ -12,7 +12,7 @@ namespace RockPaperScissors
 {
     public partial class RockPaperScissors : Form
     {
-        private Player playerUser = new Player(Winner.User), playerComputer = new Player(Winner.Computer);
+        private Player playerUser = new Player(), playerComputer = new Player(Winner.Computer);
         private Random rGen = new Random();
 
         private Button[] buttons;
