@@ -31,29 +31,30 @@ namespace RockPaperScissors
         public static bool CanBeat(this Choice ch, Choice otherChoice)
         {
             //If the ch follows any one of the possible winning patterns against otherChoice, return true
-            if (ch == Choice.Rock)
+            switch (ch)
             {
-                if (otherChoice == Choice.Scissors)
-                {
-                    return true;
-                }
+                case Choice.Rock:
+                    if (otherChoice == Choice.Scissors)
+                    {
+                        return true;
+                    }
+                    break;
+
+                case Choice.Paper:
+                    if (otherChoice == Choice.Rock)
+                    {
+                        return true;
+                    }
+                    break;
+
+                case Choice.Scissors:
+                    if (otherChoice == Choice.Paper)
+                    {
+                        return true;
+                    }
+                    break;
             }
 
-            if (ch == Choice.Paper)
-            {
-                if (otherChoice == Choice.Rock)
-                {
-                    return true;
-                }
-            }
-
-            if (ch == Choice.Scissors)
-            {
-                if (otherChoice == Choice.Paper)
-                {
-                    return true;
-                }
-            }
 
             //If it doesn't follow any pattern, then return false (even if it's a draw)
             return false;

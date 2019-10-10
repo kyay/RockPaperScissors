@@ -29,7 +29,7 @@ namespace RockPaperScissors
             //Play click sound
             System.Media.SystemSounds.Exclamation.Play();
             //Get the user and computer choices and set them into their respective players
-            Winner winner = Winner.None;
+            Winner winner;
             playerUser.Choice = (Choice)Convert.ToInt32(((Button)sender).Tag);
             playerComputer.Choice = (Choice)rGen.Next(1, 4);
 
@@ -91,16 +91,17 @@ namespace RockPaperScissors
 
         private Choice ConvertIntegerToChoice(int intChoice)
         {
-            System.Collections.IEnumerator enumerator = Enum.GetValues(typeof(Choice)).GetEnumerator();
-            System.Collections.IEnumerator enumerator = Enum.GetValues(typeof(Choice)).GetEnumerator();
+            System.Collections.IEnumerator valuesEnumerator = Enum.GetValues(typeof(Choice)).GetEnumerator();
+            System.Collections.IEnumerator namesEnumerator = Enum.GetNames(typeof(Choice)).GetEnumerator();
 
-            while (enumerator.MoveNext())
+            while (valuesEnumerator.MoveNext() && namesEnumerator.MoveNext())
             {
-                if(intChoice + 1 == enumerator.Current)
+                if(intChoice + 1 == (int) valuesEnumerator.Current)
                 {
-                    return Enum.
+                    return (Choice) Enum.Parse(typeof(Choice), (string) namesEnumerator.Current);
                 }
             }
+            return Choice.None;
         }
     }
 }

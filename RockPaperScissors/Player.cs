@@ -20,7 +20,11 @@ namespace RockPaperScissors
 			{
 				return winner;
 			}
-		}
+            set
+            {
+                winner = value;
+            }
+        }
 
 		public Choice Choice
 		{
@@ -39,27 +43,39 @@ namespace RockPaperScissors
 			get
 			{
 				return winCount;
-			}
-		}
+            }
+            set
+            {
+                winCount = value;
+            }
+        }
 
 		public int LossCount
 		{
 			get
 			{
 				return lossCount;
-			}
-		}
+            }
+            set
+            {
+                lossCount = value;
+            }
+        }
 
 		public int DrawCount
 		{
 			get
 			{
 				return drawCount;
-			}
-		}
+            }
+            set
+            {
+                drawCount = value;
+            }
+        }
 		public Player()
 		{
-			winner = Winner.None;
+			winner = Winner.User;
 		}
 
 		public Player(Winner wnrWinner)
@@ -74,10 +90,6 @@ namespace RockPaperScissors
 				winCount++;
 			else if (wnrNewWinner == Winner.Draw)
 				drawCount++;
-			else if (wnrNewWinner == Winner.None)
-			{
-				//Do Nothing
-			}
 			else
 				lossCount++;
 		}
