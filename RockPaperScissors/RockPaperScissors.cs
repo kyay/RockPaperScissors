@@ -17,7 +17,6 @@ namespace RockPaperScissors
 
         private Button[] buttons;
 
-
         public RockPaperScissors()
         {
             InitializeComponent();
@@ -30,8 +29,8 @@ namespace RockPaperScissors
             System.Media.SystemSounds.Exclamation.Play();
             //Get the user and computer choices and set them into their respective players
             Winner winner;
-            playerUser.Choice = (Choice)Convert.ToInt32(((Button)sender).Tag);
-            playerComputer.Choice = (Choice)rGen.Next(1, 4);
+            playerUser.Choice = ConvertIntegerToChoice(GetUserDecisionFromButton((Button)sender));
+            playerComputer.Choice = ConvertIntegerToChoice(rGen.Next(1, 4));
 
             //Decide who the winner is
             if (playerUser.Choice == playerComputer.Choice)
@@ -75,7 +74,8 @@ namespace RockPaperScissors
             lblComputerStats.Text = "Computer Stats: \n" + playerComputer.ToString();
         }
 
-        private Choice GetUserDecisionFromButton(Button clickedButton)
+        //Returns the user decision based on the clicked button.
+        private int GetUserDecisionFromButton(Button clickedButton)
         {
             int intUserChoice = -1;
 
@@ -86,7 +86,7 @@ namespace RockPaperScissors
                     intUserChoice = i;
                 }
             }
-            return (Choice)(intUserChoice + 1);
+            return intUserChoice + 1;
         }
 
         private Choice ConvertIntegerToChoice(int intChoice)
@@ -96,7 +96,7 @@ namespace RockPaperScissors
 
             while (valuesEnumerator.MoveNext() && namesEnumerator.MoveNext())
             {
-                if(intChoice + 1 == (int) valuesEnumerator.Current)
+                if(intChoice == (int) valuesEnumerator.Current)
                 {
                     return (Choice) Enum.Parse(typeof(Choice), (string) namesEnumerator.Current);
                 }
